@@ -180,7 +180,7 @@ function ConversationItem({
           </p>
           <div className="flex items-center gap-1 flex-shrink-0">
             {isUnassigned && (
-              <AlertTriangle className="h-3 w-3 text-wm-yellow" title="Sem responsável" />
+              <span title="Sem responsável"><AlertTriangle className="h-3 w-3 text-wm-yellow" /></span>
             )}
             {conv.unreadCount > 0 && (
               <span className="bg-wm-green text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center">
