@@ -75,6 +75,20 @@ services:
     networks:
       - wm_network
 
+  evolution:
+    image: atendai/evolution-api:latest
+    container_name: wm_evolution
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      SERVER_URL: http://72.61.24.80:8080
+      AUTHENTICATION_API_KEY: ${EVOLUTION_API_KEY:-evolution_key_change_me}
+      DATABASE_ENABLED: "false"
+      REDIS_ENABLED: "false"
+    networks:
+      - wm_network
+
   nginx:
     image: nginx:alpine
     container_name: wm_nginx
